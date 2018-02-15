@@ -58,6 +58,23 @@ float:right;
 
     <!-- Add custom CSS here -->
     <link href="css/business-casual.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="57x57" href="Icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="Icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="Icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="Icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="Icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="Icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="Icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="Icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="Icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="Icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="Icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Icon/favicon-16x16.png">
+    <link rel="manifest" href="Icon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="Icon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
@@ -249,13 +266,26 @@ Then whenever God calls, there would be a lot more people heaven bound.<br>
     </footer>
 
     <!-- JavaScript -->
-	
+    <script type="text/javascript">
+        //This is the "Offline copy of pages" service worker
+    
+        //Add this below content to your HTML page, or add the js file to your page at the very top to register sercie worker
+            if (navigator.serviceWorker.controller) {
+            console.log('[PWA Builder] active service worker found, no need to register')
+            } else {
+            //Register the ServiceWorker
+            navigator.serviceWorker.register('pwabuilder-sw.js', {
+                scope: './'
+            }).then(function(reg) {
+                console.log('Service worker has been registered for scope:'+ reg.scope);
+            });
+        }
+    
+    
+        </script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery-1.10.2.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery-3.1.1.min.js"></script>
-	
-
-
-<script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.js"></script>
     <script>
     // Activates the Carousel
